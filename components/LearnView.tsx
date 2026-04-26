@@ -46,7 +46,8 @@ export default function LearnView({ onLoadSystem }: { onLoadSystem?:(id:string)=
 // Progress bar
 window.addEventListener('scroll', () => {
   const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-  document.getElementById('pb').style.width = Math.min(pct, 100) + '%';
+  const pb = document.getElementById('pb');
+  if (pb) pb.style.width = Math.min(pct, 100) + '%';
 });
 
 // Toggle accordion
